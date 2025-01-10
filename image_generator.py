@@ -1,16 +1,16 @@
-from diffusers import DiffusionPipeline
+from diffusers import StableDiffusionPipeline
 
 access_token = "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"
 
-# Load the FLUX model
+# Initialize the Stable Diffusion pipeline
 def initialize_image_generator():
     """
-    Initializes the FLUX.1-dev image generation pipeline.
+    Initializes the Stable Diffusion XL pipeline.
     
     Returns:
-        DiffusionPipeline: The initialized pipeline.
+        StableDiffusionPipeline: The initialized pipeline.
     """
-    pipeline = DiffusionPipeline.from_pretrained("black-forest-labs/FLUX.1-dev",token=access_token)
+    pipeline = StableDiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0")
     pipeline.to("cuda")  # Use GPU for faster generation
     return pipeline
 
@@ -20,7 +20,7 @@ def generate_image(prompt, pipeline, output_path="generated_image.png"):
 
     Args:
         prompt (str): The description for the image.
-        pipeline (DiffusionPipeline): The FLUX image generation pipeline.
+        pipeline (StableDiffusionPipeline): The Stable Diffusion XL pipeline.
         output_path (str): Path to save the generated image.
 
     Returns:
