@@ -1,6 +1,6 @@
 import streamlit as st
 from story_generator import generate_story
-from image_generator import generate_image
+#from image_generator import generate_image
 
 # Title
 st.title("Personalized Storybook Generator")
@@ -22,7 +22,7 @@ if submit_button:
     st.write("### Your Story")
     st.write(story)
 
-    # Generate Illustration
+    '''# Generate Illustration
     image_path = generate_image(story)
-    st.image(image_path, caption="Story Illustration")
+    st.image(image_path, caption="Story Illustration")'''
 
