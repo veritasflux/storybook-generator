@@ -6,15 +6,19 @@ from image_generator import generate_image
 st.title("Personalized Storybook Generator")
 
 # Input Form
-with st.form("input_form"):
+with st.form("storybook_form"):
     child_name = st.text_input("Child's Name")
     favorite_animal = st.text_input("Favorite Animal")
-    adventure_type = st.selectbox("Choose an Adventure", ["Space Journey", "Forest Quest", "Pirate Adventure"])
+    adventure_type = st.selectbox(
+        "Choose an Adventure", 
+        ["Space Journey", "Forest Quest", "Pirate Adventure"]
+    )
     submit_button = st.form_submit_button("Generate Story")
 
-# Generate Story
+# Generate and Display Story
 if submit_button:
-    story = generate_story(child_name, favorite_animal, adventure_type)
+    with st.spinner("Generating your story..."):
+        story = generate_story(child_name, favorite_animal, adventure_type)
     st.write("### Your Story")
     st.write(story)
 
