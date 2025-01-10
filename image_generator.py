@@ -25,6 +25,6 @@ def generate_image(prompt, pipeline, output_path="generated_image.png"):
     Returns:
         str: Path to the saved image.
     """
-    image = pipeline(prompt).images[0]
+    image = pipeline(prompt, height=512, width=512).images[0]
     image.save(output_path)
     return output_path
