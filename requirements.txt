@@ -4,3 +4,4 @@ torch
 stable-diffusion
 google-cloud-texttospeech
 groq
+diffusers
