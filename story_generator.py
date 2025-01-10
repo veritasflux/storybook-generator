@@ -16,7 +16,7 @@ def generate_story(name, animal, adventure):
         str: The generated story.
     """
     # Prepare the story prompt
-    system_prompt = f"Write a children's story (abount 250 words) about {name} who embarks on a {adventure} with their favorite animal, a {animal}."
+    system_prompt = f"Write a children's story (abount 250 words) about {name} who embarks on a {adventure} with their favorite animal, a {animal}. For each paragraph create a title"
 
     # Call Groq's chat completion
     completion = client.chat.completions.create(
