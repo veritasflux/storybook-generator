@@ -1,4 +1,4 @@
-from diffusers import StableDiffusionPipeline
+from diffusers import DiffusionPipeline
 
 
 # Initialize the Stable Diffusion pipeline
@@ -9,7 +9,7 @@ def initialize_image_generator():
     Returns:
         StableDiffusionPipeline: The initialized pipeline.
     """
-    pipeline = StableDiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0",safety_checker=None)
+    pipeline = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0",safety_checker=None)
     pipeline.to("cpu")  # Use CPU
     return pipeline
 
