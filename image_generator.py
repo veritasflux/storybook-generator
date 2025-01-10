@@ -11,7 +11,7 @@ def initialize_image_generator():
         StableDiffusionPipeline: The initialized pipeline.
     """
     pipeline = StableDiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0")
-    pipeline.to("cuda")  # Use GPU for faster generation
+    pipeline.to("cpu")  # Use CPU
     return pipeline
 
 def generate_image(prompt, pipeline, output_path="generated_image.png"):
