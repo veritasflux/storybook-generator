@@ -3,3 +3,4 @@ transformers
 torch
 stable-diffusion
 google-cloud-texttospeech
+groq
