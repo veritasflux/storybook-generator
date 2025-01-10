@@ -25,8 +25,11 @@ if submit_button:
     st.write(story)
 
     # Generate Illustration
-    prompt = f"{adventure_type} with a {favorite_animal}"
+    prompt = f"{adventure_type} with a {favorite_animal} for a children's story"
     with st.spinner("Generating an illustration..."):
-        image_path = generate_image(prompt, image_pipeline)
-    st.image(image_path, caption="Generated Illustration")
+        try:
+            image_path = generate_image(prompt, image_pipeline)
+            st.image(image_path, caption="Generated Illustration")
+        except Exception as e:
+            st.error(f"Error generating illustration: {e}")
 
