@@ -1,5 +1,7 @@
 from diffusers import DiffusionPipeline
 
+access_token = "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"
+
 # Load the FLUX model
 def initialize_image_generator():
     """
@@ -8,7 +10,7 @@ def initialize_image_generator():
     Returns:
         DiffusionPipeline: The initialized pipeline.
     """
-    pipeline = DiffusionPipeline.from_pretrained("black-forest-labs/FLUX.1-dev")
+    pipeline = DiffusionPipeline.from_pretrained("black-forest-labs/FLUX.1-dev",token=access_token)
     pipeline.to("cuda")  # Use GPU for faster generation
     return pipeline
 
