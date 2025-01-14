@@ -1,8 +1,6 @@
 streamlit
-transformers
 torch
-stable-diffusion
 google-cloud-texttospeech
 groq
-diffusers
+replicate
 accelerate
