@@ -3,7 +3,7 @@ from PIL import Image
 import io
 
 
-def generate_image(prompt, api_url, headers, output_path="generated_image.png"):
+def generate_image(prompt, headers, output_path="generated_image.png"):
     """
     Generates an image based on the given prompt using Hugging Face API.
 
