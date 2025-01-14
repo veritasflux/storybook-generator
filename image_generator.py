@@ -2,7 +2,7 @@ import requests
 from PIL import Image
 import io
 
-
+headers = {"Authorization" : "Bearer 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"}
 def generate_image(prompt, headers, output_path="generated_image.png"):
     """
     Generates an image based on the given prompt using Hugging Face API.
@@ -18,7 +18,7 @@ def generate_image(prompt, headers, output_path="generated_image.png"):
     """
     # Payload for the API request
     payload = {"inputs": prompt}
-    headers = {"Authorization" : "Bearer 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"}
+
     try:
         # API request
         response = requests.post("https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large", headers=headers, json=payload)
