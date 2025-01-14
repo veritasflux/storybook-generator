@@ -1,36 +1,37 @@
-from diffusers import DiffusionPipeline
+import requests
+from PIL import Image
+import io
 
 
-def generate_image(prompt, api, output_path="generated_image.png"):
+def generate_image(prompt, api_url, headers, output_path="generated_image.png"):
     """
-    Generates an image based on the given prompt.
+    Generates an image based on the given prompt using Hugging Face API.
 
     Args:
         prompt (str): The description for the image.
-        pipeline (StableDiffusionPipeline): The Stable Diffusion XL pipeline.
+        api_url (str): The API endpoint for the Stable Diffusion model.
+        headers (dict): Authorization headers for the API.
         output_path (str): Path to save the generated image.
 
     Returns:
-        str: Path to the saved image.
+        str: Path to the saved image or an error message if the generation fails.
     """
-    pipe = DiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
-    image = pipe(prompt, height=512, width=512).images[0]
-    image.save(output_path)
-    return output_path
-    """
-    output = api.run(
-      "black-forest-labs/flux-1.1-pro-ultra",
-      input={
-        "width": 1024,
-        "height": 1024,
-        "prompt": prompt,
-        "refine": "expert_ensemble_refiner",
-        "num_outputs": 1,
-        "apply_watermark": False,
-        "negative_prompt": "low quality, worst quality",
-        "num_inference_steps": 25
-       }
-     )
-    output.save(output_path)
-    return output_path
-"""
+    # Payload for the API request
+    payload = {"inputs": prompt}
+    headers = {"Authorization" : "Bearer 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"}
+    try:
+        # API request
+        response = requests.post("https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large", headers=headers, json=payload)
+        response.raise_for_status()  # Raise an HTTPError for bad responses (4xx and 5xx)
+
+        # Read image bytes and save the image
+        image_bytes = response.content
+        image = Image.open(io.BytesIO(image_bytes))
+        image.save(output_path)
+        return output_path
+
+    except requests.exceptions.RequestException as e:
+        return f"Error generating image: {e}"
+
+    except Exception as e:
+        return f"Unexpected error: {e}"
