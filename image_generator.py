@@ -1,3 +1,6 @@
+from diffusers import DiffusionPipeline
+
+
 def generate_image(prompt, api, output_path="generated_image.png"):
     """
     Generates an image based on the given prompt.
@@ -9,7 +12,9 @@ def generate_image(prompt, api, output_path="generated_image.png"):
 
     Returns:
         str: Path to the saved image.
-    
+    """
+    pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0")
+    image = pipe(prompt).images[0]
     image = pipeline(prompt, height=512, width=512).images[0]
     image.save(output_path)
     return output_path
@@ -29,3 +34,4 @@ def generate_image(prompt, api, output_path="generated_image.png"):
      )
     output.save(output_path)
     return output_path
+"""
