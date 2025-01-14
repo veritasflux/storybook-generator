@@ -1,6 +1,6 @@
 import streamlit as st
 from story_generator import generate_story
-from image_generator import initialize_image_generator, generate_image
+from image_generator import generate_image
 import torch
 
 # Title
