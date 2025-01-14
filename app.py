@@ -21,7 +21,8 @@ if submit_button:
         story = generate_story(child_name, favorite_animal, adventure_type)
     
     st.write("### Your Story")
-
+    st.write("### Raw Story Output")
+    st.code(story)  # Display raw output for debugging
     # Split the story into sections
     sections = story.split("---")
     for i in range(0, len(sections) - 1, 2):  # Titles and paragraphs alternate
