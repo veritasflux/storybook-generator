@@ -13,8 +13,8 @@ def generate_image(prompt, api, output_path="generated_image.png"):
     Returns:
         str: Path to the saved image.
     """
-    DiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
-    image = pipeline(prompt, height=512, width=512).images[0]
+    pipe = DiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
+    image = pipe(prompt, height=512, width=512).images[0]
     image.save(output_path)
     return output_path
     """
