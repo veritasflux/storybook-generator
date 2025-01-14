@@ -9,7 +9,7 @@ api = replicate.Client(api_token=os.getenv("REPLICATE_API_TOKEN"))
 
 # Title
 st.title("Personalized Storybook Generator")
-
+st.title(os.getenv("REPLICATE_API_TOKEN"))
 # Input Form
 with st.form("storybook_form"):
     child_name = st.text_input("Child's Name")
