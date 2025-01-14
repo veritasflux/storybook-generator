@@ -1,6 +1,7 @@
 import replicate
 import os
 replicate.api_token = os.getenv("REPLICATE_API_TOKEN")
+print(os.getenv("REPLICATE_API_TOKEN"))
 
 def generate_image(prompt, output_path="generated_image.png"):
     """
