@@ -1,5 +1,5 @@
 import replicate
-
+import os
 def generate_image(prompt, output_path="generated_image.png"):
     """
     Generates an image based on the given prompt.
@@ -16,6 +16,7 @@ def generate_image(prompt, output_path="generated_image.png"):
     image.save(output_path)
     return output_path
     """
+    replicate.api_token = os.getenv("REPLICATE_API_TOKEN")
     output = replicate.run(
       "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b",
       input={
