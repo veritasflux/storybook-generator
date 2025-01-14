@@ -15,7 +15,7 @@ def generate_image(prompt, api, output_path="generated_image.png"):
     return output_path
     """
     output = api.run(
-      "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b",
+      "black-forest-labs/flux-1.1-pro-ultra",
       input={
         "width": 1024,
         "height": 1024,
