@@ -1,17 +1,4 @@
-from diffusers import DiffusionPipeline
-
-
-# Initialize the Stable Diffusion pipeline
-def initialize_image_generator():
-    """
-    Initializes the Stable Diffusion XL pipeline.
-    
-    Returns:
-        StableDiffusionPipeline: The initialized pipeline.
-    """
-    pipeline = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0",safety_checker=None)
-    pipeline.to("cpu")  # Use CPU
-    return pipeline
+import replicate
 
 def generate_image(prompt, pipeline, output_path="generated_image.png"):
     """
@@ -24,7 +11,23 @@ def generate_image(prompt, pipeline, output_path="generated_image.png"):
 
     Returns:
         str: Path to the saved image.
-    """
+    
     image = pipeline(prompt, height=512, width=512).images[0]
     image.save(output_path)
+    return output_path
+    """
+    output = replicate.run(
+      "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b",
+      input={
+        "width": 1024,
+        "height": 1024,
+        "prompt": prompt,
+        "refine": "expert_ensemble_refiner",
+        "num_outputs": 1,
+        "apply_watermark": False,
+        "negative_prompt": "low quality, worst quality",
+        "num_inference_steps": 25
+       }
+     )
+    output.save(output_path)
     return output_path
