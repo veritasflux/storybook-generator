@@ -2,6 +2,9 @@ import streamlit as st
 from story_generator import generate_story
 from image_generator import generate_image
 import torch
+import replicate
+
+api = replicate.Client(api_token=os.getenv("REPLICATE_API_TOKEN"))
 
 # Title
 st.title("Personalized Storybook Generator")
@@ -27,7 +30,7 @@ if submit_button:
     prompt = f"{adventure_type} with a {favorite_animal} for a children's story"
     with st.spinner("Generating an illustration..."):
         try:
-            image_path = generate_image(prompt)
+            image_path = generate_image(prompt, api)
             st.image(image_path, caption="Generated Illustration")
         except Exception as e:
             st.error(f"Error generating illustration: {e}")

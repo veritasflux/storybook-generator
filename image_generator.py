@@ -1,10 +1,9 @@
 import replicate
 import os
 
-api = replicate.Client(api_token=os.getenv("REPLICATE_API_TOKEN"))
 
 
-def generate_image(prompt, output_path="generated_image.png"):
+def generate_image(prompt, api, output_path="generated_image.png"):
     """
     Generates an image based on the given prompt.
 
