@@ -19,20 +19,24 @@ with st.form("storybook_form"):
 if submit_button:
     with st.spinner("Generating your story..."):
         story = generate_story(child_name, favorite_animal, adventure_type)
+    
     st.write("### Your Story")
 
-    # Split the story into paragraphs
-    paragraphs = story.split("\n\n")  # Assuming paragraphs are separated by double newlines
+    # Split the story into sections
+    sections = story.split("---")
+    for i in range(0, len(sections) - 1, 2):  # Titles and paragraphs alternate
+        title = sections[i].strip().replace("###", "").strip()
+        paragraph = sections[i + 1].strip()
 
-    # Generate images for each paragraph
-    for idx, paragraph in enumerate(paragraphs):
-        if paragraph.strip():  # Ensure the paragraph is not empty
+        if title and paragraph:
+            st.write(f"#### {title}")
             st.write(paragraph)
 
+            # Generate illustration for the paragraph
             prompt = f"An illustration for: {paragraph}"
-            with st.spinner(f"Generating illustration for paragraph {idx + 1}..."):
+            with st.spinner(f"Generating illustration for '{title}'..."):
                 try:
-                    image_path = generate_image(prompt, headers, output_path=f"generated_image_{idx + 1}.png")
-                    st.image(image_path, caption=f"Illustration for paragraph {idx + 1}")
+                    image_path = generate_image(prompt, headers, output_path=f"generated_image_{i // 2 + 1}.png")
+                    st.image(image_path, caption=f"Illustration for '{title}'")
                 except Exception as e:
-                    st.error(f"Error generating illustration for paragraph {idx + 1}: {e}")
+                    st.error(f"Error generating illustration for '{title}': {e}")
