@@ -2,7 +2,7 @@ import requests
 from PIL import Image
 import io
 
-headers = {"Authorization" : "Bearer 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"}
+
 def generate_image(prompt, headers, output_path="generated_image.png"):
     """
     Generates an image based on the given prompt using Hugging Face API.
