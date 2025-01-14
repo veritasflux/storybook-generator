@@ -1,8 +1,3 @@
-import replicate
-import os
-
-
-
 def generate_image(prompt, api, output_path="generated_image.png"):
     """
     Generates an image based on the given prompt.

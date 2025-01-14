@@ -3,6 +3,7 @@ from story_generator import generate_story
 from image_generator import generate_image
 import torch
 import replicate
+import os
 
 api = replicate.Client(api_token=os.getenv("REPLICATE_API_TOKEN"))
 
