@@ -14,6 +14,7 @@ def generate_image(prompt, api, output_path="generated_image.png"):
         str: Path to the saved image.
     """
     pipe = DiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
+    pipe.enable_sequential_cpu_offload()
     image = pipe(prompt, height=512, width=512).images[0]
     image.save(output_path)
     return output_path
