@@ -8,14 +8,12 @@ import os
 headers = {"Authorization" : "Bearer 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"}
 # Title
 st.title("Personalized Storybook Generator")
-st.title(os.getenv("REPLICATE_API_TOKEN"))
+
 # Input Form
 with st.form("storybook_form"):
     child_name = st.text_input("Child's Name")
     favorite_animal = st.text_input("Favorite Animal")
-    adventure_type = st.selectbox(
-        "Choose an Adventure", 
-        ["Space Journey", "Forest Quest", "Pirate Adventure"]
+    adventure_type = st.text_input("Choose Adventure")
     )
     submit_button = st.form_submit_button("Generate Story")
 
