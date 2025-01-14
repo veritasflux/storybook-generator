@@ -31,7 +31,7 @@ if submit_button:
     prompt = f"{adventure_type} with a {favorite_animal} for a children's story"
     with st.spinner("Generating an illustration..."):
         try:
-            image_path = generate_image(prompt, api)
+            image_path = generate_image(prompt, headers, output_path)
             st.image(image_path, caption="Generated Illustration")
         except Exception as e:
             st.error(f"Error generating illustration: {e}")
