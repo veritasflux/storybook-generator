@@ -14,7 +14,6 @@ with st.form("storybook_form"):
     child_name = st.text_input("Child's Name")
     favorite_animal = st.text_input("Favorite Animal")
     adventure_type = st.text_input("Choose Adventure")
-    )
     submit_button = st.form_submit_button("Generate Story")
 
 # Generate and Display Story
