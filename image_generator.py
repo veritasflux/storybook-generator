@@ -1,6 +1,6 @@
 import replicate
 
-def generate_image(prompt, pipeline, output_path="generated_image.png"):
+def generate_image(prompt, output_path="generated_image.png"):
     """
     Generates an image based on the given prompt.
 
