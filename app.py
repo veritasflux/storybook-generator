@@ -3,8 +3,6 @@ from story_generator import generate_story
 from image_generator import initialize_image_generator, generate_image
 import torch
 
-image_pipeline = initialize_image_generator()
-
 # Title
 st.title("Personalized Storybook Generator")
 
