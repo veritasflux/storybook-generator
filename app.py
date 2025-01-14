@@ -5,8 +5,7 @@ import torch
 import replicate
 import os
 
-api = replicate.Client(api_token=os.getenv("REPLICATE_API_TOKEN"))
-
+headers = {"Authorization" : "Bearer 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"}
 # Title
 st.title("Personalized Storybook Generator")
 st.title(os.getenv("REPLICATE_API_TOKEN"))
