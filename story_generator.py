@@ -46,10 +46,21 @@ def parse_story(story):
     """Parse the story into titled sections."""
     paragraphs = []
     title = None
-    for section in story.split("\n"):
-        if section.startswith("Title:"):
-            title = section.replace("Title:", "").strip()
-        elif section.startswith("Content:"):
-            content = section.replace("Content:", "").strip()
-            paragraphs.append((title, content))
+
+    for line in story.split("\n"):
+        if line.startswith("Title:"):
+            # Save any incomplete content before moving to the next title
+            if title and content:
+                paragraphs.append((title, content))
+            title = line.replace("Title:", "").strip()
+            content = ""  # Reset content for the new title
+        elif line.startswith("Content:"):
+            content = line.replace("Content:", "").strip()
+        elif title:  # Handle lines that belong to content
+            content += " " + line.strip()
+
+    # Add the last parsed paragraph
+    if title and content:
+        paragraphs.append((title, content))
+
     return paragraphs
