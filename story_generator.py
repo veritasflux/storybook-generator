@@ -17,7 +17,7 @@ def generate_story(name, animal, adventure):
     """
     # Prepare the story prompt
     system_prompt =     (    f"Write a children's story (about 250 words) about {name} who embarks on a {adventure} "
-    f"with their favorite animal, a {animal}. For each paragraph, provide a title formatted as follows (Do not add special characters before Title or Content):\n\n"
+    f"with their favorite animal, a {animal}. The story should have a wise end. For each paragraph, provide a title formatted as follows (Do not add special characters before Title or Content):\n\n"
     "Title: Title of the Paragraph\n"
     "Content: Paragraph text goes here.\n")
 
