@@ -1,5 +1,5 @@
 import streamlit as st
-from story_generator import generate_story, parse_story
+from story_generator import generate_story, parse_story, extract_traits
 from image_generator import generate_image
 import os
 import time
@@ -25,6 +25,7 @@ if submit_button:
         else:
             # Parse the story into titled paragraphs
             paragraphs = parse_story(story)
+            traits = extract_traits(story)
             st.write("### Your Story")
             st.text(story)
             for title, paragraph in paragraphs:
@@ -32,7 +33,7 @@ if submit_button:
                 st.write(paragraph)
 
                 # Generate an image for this paragraph
-                prompt = (f"generate an illustration, in a colorful, cartoonish style with soft lighting and cheerful expressions, of a child name {child_name} and his favourite animal {favorite_animal} based on this paragrah : {title}: {paragraph}.")
+                prompt = (f"Illustration for {title}: {paragraph}. {traits}. Depict this in a colorful and vibrant children's storybook style.")
                 with st.spinner(f"Generating an illustration for: {title}"):
                     try:
                         time.sleep(2)
