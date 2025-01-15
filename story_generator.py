@@ -56,17 +56,21 @@ def parse_story(story):
 
     for line in story.split("\n"):
         line = line.strip()  # Remove leading/trailing whitespace
-        if line.startswith("### Title:"):
-            if title and content:  # Append the previous title-content pair
+        if line.startswith("Title:"):
+            # Append the previous title-content pair if present
+            if title and content:
                 paragraphs.append((title, content.strip()))
-            title = line[len("### Title:"):].strip()  # Extract the title
+            title = line[len("Title:"):].strip()  # Extract the title
             content = ""  # Reset content for the new section
         elif line.startswith("Content:"):
-            content = line[len("Content:"):].strip()  # Start the new content
-        elif title:  # Append additional lines of content
+            # If a new content section starts
+            if content:
+                content += " "  # Add a space before appending new content
+            content += line[len("Content:"):].strip()
+        elif title:  # Additional content lines after "Content:"
             content += " " + line.strip()
 
-    # Append the last section
+    # Append the last title-content pair
     if title and content:
         paragraphs.append((title, content.strip()))
 
