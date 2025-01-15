@@ -2,6 +2,7 @@ import streamlit as st
 from story_generator import generate_story, parse_story
 from image_generator import generate_image
 import os
+import time
 
 headers = {"Authorization": "Bearer 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"}
 
@@ -36,6 +37,7 @@ if submit_button:
                 prompt = (f"generate an illustration of the child name {child_name} and his favourite animal {favorite_animal} based on this paragrah : {title}: {paragraph}")
                 with st.spinner(f"Generating an illustration for: {title}"):
                     try:
+                        time.sleep(2)
                         image_path = generate_image(prompt, headers)
                         st.image(image_path, caption=title)
                     except Exception as e:
