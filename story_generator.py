@@ -21,7 +21,7 @@ def generate_story(name, animal, adventure):
     f"generate traits of the {animal} like color, size and the child, boy or a girl, hair color, cloth colors"
     f"Expected output format for the traits :"
     "{Traits: {animal} size and color , {name} gender, cloth colors, hair colors}\n"
-    For each paragraph, provide a title formatted as follows (Do not add special characters before Title or Content):\n\n"
+    "For each paragraph, provide a title formatted as follows (Do not add special characters before Title or Content):\n\n"
     f"Expected output format :"
     "{Title: Title of the Paragraph}\n"
     "{Content: Paragraph text goes here}.\n")
