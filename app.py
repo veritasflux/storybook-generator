@@ -5,7 +5,7 @@ import os
 import time
 
 headers = {"Authorization": "Bearer " + os.getenv(HUGGING_API_TOKEN)}
-
+st.write(os.getenv(HUGGING_API_TOKEN))
 # Title
 st.title("Personalized Storybook Generator")
 
