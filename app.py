@@ -1,5 +1,5 @@
 import streamlit as st
-from story_generator import generate_story
+from story_generator import generate_story, parse_story
 from image_generator import generate_image
 import os
 
