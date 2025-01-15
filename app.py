@@ -19,25 +19,22 @@ with st.form("storybook_form"):
 if submit_button:
     with st.spinner("Generating your story..."):
         story = generate_story(child_name, favorite_animal, adventure_type)
-    
-    st.write("### Your Story")
-    st.write("### Raw Story Output")
-    st.code(story)  # Display raw output for debugging
-    # Split the story into sections
-    sections = story.split("---")
-    for i in range(0, len(sections) - 1, 2):  # Titles and paragraphs alternate
-        title = sections[i].strip().replace("###", "").strip()
-        paragraph = sections[i + 1].strip()
+        if not story.strip():
+            st.error("Failed to generate the story. Please try again.")
+        else:
+            # Parse the story into titled paragraphs
+            paragraphs = parse_story(story)
+            st.write("### Your Story")
 
-        if title and paragraph:
-            st.write(f"#### {title}")
-            st.write(paragraph)
+            for title, paragraph in paragraphs:
+                st.write(f"#### {title}")
+                st.write(paragraph)
 
-            # Generate illustration for the paragraph
-            prompt = f"An illustration for: {paragraph}"
-            with st.spinner(f"Generating illustration for '{title}'..."):
-                try:
-                    image_path = generate_image(prompt, headers, output_path=f"generated_image_{i // 2 + 1}.png")
-                    st.image(image_path, caption=f"Illustration for '{title}'")
-                except Exception as e:
-                    st.error(f"Error generating illustration for '{title}': {e}")
+                # Generate an image for this paragraph
+                prompt = f"{title}: {paragraph}"
+                with st.spinner(f"Generating an illustration for: {title}"):
+                    try:
+                        image_path = generate_image(prompt, headers)
+                        st.image(image_path, caption=title)
+                    except Exception as e:
+                        st.error(f"Error generating illustration for {title}: {e}")
