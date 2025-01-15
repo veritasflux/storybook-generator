@@ -51,8 +51,8 @@ def parse_story(story):
         list: A list of tuples, each containing a title and its corresponding content.
     """
     paragraphs = []
-    title = None
-    content = None
+    title, content = "", ""  # Initialize title and content as empty strings
+
 
     for line in story.split("\n"):
         line = line.strip()  # Remove leading/trailing whitespace
