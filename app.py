@@ -27,7 +27,6 @@ if submit_button:
             paragraphs = parse_story(story)
             traits = extract_traits(story)
             st.write("### Your Story")
-            st.text(story)
             for title, paragraph in paragraphs:
                 st.write(f"#### {title}")
                 st.write(paragraph)
