@@ -45,6 +45,7 @@ def generate_story(name, animal, adventure):
 def parse_story(story):
     """Parse the story into titled sections."""
     paragraphs = []
+    title = None
     for section in story.split("\n"):
         if section.startswith("Title:"):
             title = section.replace("Title:", "").strip()
