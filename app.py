@@ -31,7 +31,7 @@ if submit_button:
                 st.write(paragraph)
 
                 # Generate an image for this paragraph
-                prompt = f"{title}: {paragraph}"
+                prompt = (f"generate an illustration of the child name {child_name} and his favourite animal {favorite_animal} based on this paragrah : {title}: {paragraph}")
                 with st.spinner(f"Generating an illustration for: {title}"):
                     try:
                         image_path = generate_image(prompt, headers)
