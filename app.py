@@ -4,7 +4,7 @@ from image_generator import generate_image
 import os
 import time
 
-headers = {"Authorization": "Bearer os.getenv(HUGGING_API_TOKEN)"}
+headers = {"Authorization": "Bearer " os.getenv(HUGGING_API_TOKEN)"}
 
 # Title
 st.title("Personalized Storybook Generator")
