@@ -81,3 +81,11 @@ def parse_story(story):
 
     return paragraphs
 
+def extract_traits(story_output):
+    traits_start = story_output.find("Traits:")
+    traits_end = story_output.find("Title:", traits_start)
+    if traits_start != -1 and traits_end != -1:
+        traits_text = story_output[traits_start + len("Traits:"):traits_end].strip()
+        return traits_text
+    return ""
+
