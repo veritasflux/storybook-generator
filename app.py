@@ -25,7 +25,7 @@ if submit_button:
             # Parse the story into titled paragraphs
             paragraphs = parse_story(story)
             st.write("### Your Story")
-
+            st.write(story)
             for title, paragraph in paragraphs:
                 st.write(f"#### {title}")
                 st.write(paragraph)
