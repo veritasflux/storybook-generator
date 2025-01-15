@@ -35,7 +35,7 @@ if submit_button:
                 prompt = (f"Illustration for {title}: {paragraph}. {traits}. Depict this in a colorful and vibrant children's storybook style.")
                 with st.spinner(f"Generating an illustration for: {title}"):
                     try:
-                        time.sleep(2)
+                        time.sleep(4)
                         image_path = generate_image(prompt, headers)
                         st.image(image_path, caption=title)
                     except Exception as e:
