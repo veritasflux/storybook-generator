@@ -23,7 +23,7 @@ def generate_story(name, animal, adventure):
 
     # Call Groq's chat completion
     completion = client.chat.completions.create(
-        model="gemma2-9b-it",
+        model="llama-3.3-70b-versatile",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": ""}
