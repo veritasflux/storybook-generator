@@ -41,3 +41,14 @@ def generate_story(name, animal, adventure):
         story += chunk.choices[0].delta.content or ""
 
     return story
+    
+def parse_story(story):
+    """Parse the story into titled sections."""
+    paragraphs = []
+    for section in story.split("\n"):
+        if section.startswith("Title:"):
+            title = section.replace("Title:", "").strip()
+        elif section.startswith("Content:"):
+            content = section.replace("Content:", "").strip()
+            paragraphs.append((title, content))
+    return paragraphs
