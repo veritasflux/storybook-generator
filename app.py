@@ -4,9 +4,8 @@ from image_generator import generate_image
 import os
 import time
 
-st.write(os.getenv("HUGGING_API_TOKEN"))
-headers = {"Authorization": "Bearer " + ""}
-st.write(os.getenv("HUGGING_API_TOKEN"))
+
+headers = {"Authorization": "Bearer " + os.getenv("HUGGING_API_TOKEN")}
 # Title
 st.title("Personalized Storybook Generator")
 
@@ -27,8 +26,6 @@ if submit_button:
             # Parse the story into titled paragraphs
             paragraphs = parse_story(story)
             st.write("### Your Story")
-            st.text(story)
-            st.write(paragraphs) #Debug
 
             for title, paragraph in paragraphs:
                 st.write(f"#### {title}")
