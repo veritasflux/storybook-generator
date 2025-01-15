@@ -43,24 +43,32 @@ def generate_story(name, animal, adventure):
     return story
     
 def parse_story(story):
-    """Parse the story into titled sections."""
+    """
+    Parse the story into titled sections.
+    Args:
+        story (str): Raw story text with titles and content.
+    Returns:
+        list: A list of tuples, each containing a title and its corresponding content.
+    """
     paragraphs = []
     title = None
+    content = None
 
     for line in story.split("\n"):
-        if line.startswith("Title:"):
-            # Save any incomplete content before moving to the next title
-            if title and content:
-                paragraphs.append((title, content))
-            title = line.replace("Title:", "").strip()
-            content = ""  # Reset content for the new title
+        line = line.strip()  # Remove leading/trailing whitespace
+        if line.startswith("### Title:"):
+            if title and content:  # Append the previous title-content pair
+                paragraphs.append((title, content.strip()))
+            title = line[len("### Title:"):].strip()  # Extract the title
+            content = ""  # Reset content for the new section
         elif line.startswith("Content:"):
-            content = line.replace("Content:", "").strip()
-        elif title:  # Handle lines that belong to content
+            content = line[len("Content:"):].strip()  # Start the new content
+        elif title:  # Append additional lines of content
             content += " " + line.strip()
 
-    # Add the last parsed paragraph
+    # Append the last section
     if title and content:
-        paragraphs.append((title, content))
+        paragraphs.append((title, content.strip()))
 
     return paragraphs
+
