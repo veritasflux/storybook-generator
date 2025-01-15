@@ -21,7 +21,7 @@ def generate_image(prompt, headers, output_path="generated_image.png"):
 
     try:
         # API request
-        response = requests.post("https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev", headers=headers, json=payload)
+        response = requests.post("https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large", headers=headers, json=payload)
         response.raise_for_status()  # Raise an HTTPError for bad responses (4xx and 5xx)
 
         # Read image bytes and save the image
