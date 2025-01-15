@@ -20,11 +20,11 @@ def generate_story(name, animal, adventure):
     f"with their favorite animal, a {animal}. The story should have a wise end."
     f"generate traits of the {animal} like color, size and the child, boy or a girl, hair color, cloth colors"
     f"Expected output format for the traits :"
-    "{Traits: {animal} size and color , {name} gender, cloth colors, hair colors}\n"
+    "Traits: {animal} size and color , {name} gender, cloth colors, hair colors\n"
     f"For each paragraph, provide a title formatted as follows (Do not add special characters before Title or Content):\n\n"
     f"Expected output format :"
-    "{Title: Title of the Paragraph}\n"
-    "{Content: Paragraph text goes here}.\n")
+    "Title: Title of the Paragraph\n"
+    "Content: Paragraph text goes here.\n")
 
     # Call Groq's chat completion
     completion = client.chat.completions.create(
