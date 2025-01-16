@@ -114,17 +114,16 @@ def parse_illustration(story: str):
     illustrations = re.findall(illustration_pattern, story)
     return illustrations
 
-def translate_text(text, target_language="fr"):
+async def translate_text(text, lang_code="fr"):
     """
-    Translates text to the target language.
+    Translates the given text into the specified language.
     
     Args:
         text (str): The text to translate.
-        target_language (str): The target language code (e.g., 'fr' for French).
+        lang_code (str): The language code to translate the text into.
     
     Returns:
         str: The translated text.
     """
-    translator = Translator()
-    translated = translator.translate(text, dest=target_language)
-    return translated
+    translated = await translator.translate(text, target_language=lang_code)
+    return translated.text
