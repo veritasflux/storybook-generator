@@ -24,8 +24,9 @@ def generate_story(name, animal, adventure):
     f"For each paragraph, provide a title and an illustration proposal formatted as follows (Do not add special characters before Title or Content or Illustration):\n\n"
     f"Example Expected output format:"
     "Title: A New Adventure\n"
+    "Illustration: a {animal} and a child together in a landscape\n"
     "Content: The Adventure between Whiskers and Lilia begins.\n"
-    "Illustration: a {animal} and a child together in a landscape\n")
+)
 
     # Call Groq's chat completion
     completion = client.chat.completions.create(
