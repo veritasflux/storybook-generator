@@ -17,7 +17,7 @@ def generate_story(name, animal, adventure):
     """
     # Prepare the story prompt
     system_prompt =     (    f"You are a professional sotryteller.Write a children's story (about 250 words and 4 paragraphs) about {name} who embarks on a {adventure}"
-    f"with their favorite animal, a {animal}. The story must have one tricky puzzle that will be resolved. The story should have a wise end."
+    f"with their favorite animal, a {animal}. The story must have one tricky puzzle or riddle or obstacle or adventure that will be resolved. The story should have a wise end."
     f"generate traits of the {animal} like color, size and the child, boy or a girl, hair color, cloth colors"
     f"Traits text should be positioned at the beginning of the story.Example of Expected output format for the traits "
     "Traits: The animal is a small, golden dog. The child is a boy with short black hair, wearing a blue shirt and red shorts.\n"
