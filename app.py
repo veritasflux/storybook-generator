@@ -20,6 +20,15 @@ with st.form("storybook_form"):
     target_language = st.selectbox("Translate Story To", ["None", "French", "Spanish", "Arabic"])
     submit_button = st.form_submit_button("Generate Story")
 
+# Function to handle the translation
+async def translate_paragraphs(paragraphs, lang_code):
+    translated_paragraphs = []
+    for title, paragraph in paragraphs:
+        translated_title = await translate_text(title, lang_code)
+        translated_paragraph = await translate_text(paragraph, lang_code)
+        translated_paragraphs.append((translated_title, translated_paragraph))
+    return translated_paragraphs
+
 # Generate and Display Story with Images
 if submit_button:
     with st.spinner("Generating your story..."):
@@ -37,13 +46,14 @@ if submit_button:
             if len(illustrations) != len(paragraphs):
                 st.error("Mismatch between story paragraphs and illustrations.")
             else:
-                for i, (title, paragraph) in enumerate(paragraphs):
-                    # Translate title and paragraph if needed
-                    if target_language != "None":
-                        lang_code = {"French": "fr", "Spanish": "es", "Arabic": "ar"}[target_language]
-                        title = asyncio.run(translate_text(title, lang_code))
-                        paragraph = asyncio.run(translate_text(paragraph, lang_code))
+                # Handle translation if needed
+                if target_language != "None":
+                    lang_code = {"French": "fr", "Spanish": "es", "Arabic": "ar"}[target_language]
+                    translated_paragraphs = asyncio.run(translate_paragraphs(paragraphs, lang_code))
+                else:
+                    translated_paragraphs = paragraphs
 
+                for i, (title, paragraph) in enumerate(translated_paragraphs):
                     # Display title and content
                     st.write(f"#### {title}")
                     st.write(paragraph)
@@ -56,6 +66,7 @@ if submit_button:
                     )
 
                     with st.spinner(f"Generating an illustration for: {title}"):
+
                         try:
                             time.sleep(4)  # Adjust delay as needed
                             image_path = generate_image(prompt, headers)
