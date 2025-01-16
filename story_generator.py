@@ -26,6 +26,10 @@ def generate_story(name, animal, adventure):
     "Title: Setting Sail\n"
     "Content: Ahmed had always dreamed of going on a sea adventure with his favorite animal, a shark named Finley. One sunny day, he finally got his chance. Ahmed and Finley set sail on a small boat, excited to explore the open waters. The wind was in their hair, and the sun was shining bright as they sailed further and further away from the shore.\n"
      "Illustration: a {animal} sailing alongside a child who is inside a boat.\n"
+     f"Second Example Expected output format:"
+    "Title: The Mysterious Island\n"
+    "Content: As they sailed further and further away from the shore, Ahmed and Bruce stumbled upon a mysterious island. The island was surrounded by rocky cliffs and dense jungle, and Ahmed was eager to explore it. But as they approached the shore, they realized that the only way to reach the island was by solving a tricky puzzle. A sign on the cliff read: "What can be broken, but never held?"\n"
+     "Illustration: a {animal} with a child on the shore reading a sign with no readable letters.\n"
 )
 
     # Call Groq's chat completion
