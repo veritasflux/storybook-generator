@@ -1,3 +1,9 @@
+import re
+from googletrans import Translator
+from groq import Groq
+
+# Initialize Groq client
+client = Groq(api_key="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")
 import streamlit as st
 from story_generator import generate_story, parse_story, extract_traits, parse_illustration
 from image_generator import generate_image
