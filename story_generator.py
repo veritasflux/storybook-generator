@@ -1,4 +1,9 @@
+import re
+from googletrans import Translator
+from groq import Groq
 
+# Initialize Groq client
+client = Groq(api_key="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")
 
 def generate_story(name, animal, adventure):
     """
