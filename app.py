@@ -1,9 +1,8 @@
 import streamlit as st
-from story_generator import generate_story, parse_story, extract_traits, parse_illustration, translate_text
+from story_generator import generate_story, parse_story, extract_traits, parse_illustration
 from image_generator import generate_image
 import os
 import time
-from groq import Groq
 
 
 # Headers for the API authorization
