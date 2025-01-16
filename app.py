@@ -3,6 +3,7 @@ from story_generator import generate_story, parse_story, extract_traits, parse_i
 from image_generator import generate_image
 import os
 import time
+import asyncio
 
 
 # Headers for the API authorization
@@ -40,8 +41,8 @@ if submit_button:
                     # Translate title and paragraph if needed
                     if target_language != "None":
                         lang_code = {"French": "fr", "Spanish": "es", "Arabic": "ar"}[target_language]
-                        title = translate_text(title, lang_code)
-                        paragraph = translate_text(paragraph, lang_code)
+                        title = asyncio.run(translate_text(title, lang_code))
+                        paragraph = asyncio.run(translate_text(paragraph, lang_code))
 
                     # Display title and content
                     st.write(f"#### {title}")
