@@ -1,5 +1,5 @@
 import streamlit as st
-from story_generator import generate_story, parse_story, extract_traits, parse_illustration
+from story_generator import generate_story, parse_story, extract_traits, parse_illustration, translate_text
 from image_generator import generate_image
 import os
 import time
@@ -15,6 +15,7 @@ with st.form("storybook_form"):
     child_name = st.text_input("Child's Name")
     favorite_animal = st.text_input("Favorite Animal")
     adventure_type = st.text_input("Choose Adventure")
+    target_language = st.selectbox("Translate Story To", ["None", "French", "Spanish", "Arabic"])
     submit_button = st.form_submit_button("Generate Story")
 
 # Generate and Display Story with Images
@@ -25,21 +26,27 @@ if submit_button:
             st.error("Failed to generate the story. Please try again.")
         else:
             # Parse the story into titled paragraphs
-            paragraphs = parse_story(story)
-            traits = extract_traits(story)  # Extract traits from the story
-            illustrations = parse_illustration(story)  # Extract illustration prompts
-
+            paragraphs = parse_story(story)  # Titles and content (without illustrations)
+            traits = extract_traits(story)
+            illustrations = parse_illustration(story)
+            
             st.write("### Your Story")
             
-            # Ensure there are illustrations for each paragraph
             if len(illustrations) != len(paragraphs):
                 st.error("Mismatch between story paragraphs and illustrations.")
             else:
                 for i, (title, paragraph) in enumerate(paragraphs):
+                    # Translate title and paragraph if needed
+                    if target_language != "None":
+                        lang_code = {"French": "fr", "Spanish": "es", "Arabic": "ar"}[target_language]
+                        title = translate_text(title, lang_code)
+                        paragraph = translate_text(paragraph, lang_code)
+
+                    # Display title and content
                     st.write(f"#### {title}")
                     st.write(paragraph)
 
-                    # Generate an image for this paragraph
+                    # Generate and display an image
                     illustration_description = illustrations[i]
                     prompt = (
                         f"{illustration_description}, {traits}. "
@@ -48,7 +55,7 @@ if submit_button:
 
                     with st.spinner(f"Generating an illustration for: {title}"):
                         try:
-                            time.sleep(4)  # Adjust delay as needed to avoid API rate limits
+                            time.sleep(4)  # Adjust delay as needed
                             image_path = generate_image(prompt, headers)
                             st.image(image_path, caption=title)
                         except Exception as e:
