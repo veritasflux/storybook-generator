@@ -1,5 +1,7 @@
 from groq import Groq
 import re
+from googletrans import Translator
+
 # Initialize Groq client
 client = Groq(api_key="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")
 
@@ -111,3 +113,18 @@ def parse_illustration(story: str):
     illustration_pattern = r"Illustration:\s*(.+)"
     illustrations = re.findall(illustration_pattern, story)
     return illustrations
+
+def translate_text(text, target_language="fr"):
+    """
+    Translates text to the target language.
+    
+    Args:
+        text (str): The text to translate.
+        target_language (str): The target language code (e.g., 'fr' for French).
+    
+    Returns:
+        str: The translated text.
+    """
+    translator = Translator()
+    translated = translator.translate(text, dest=target_language)
+    return translated.text
