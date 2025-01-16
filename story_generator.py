@@ -125,5 +125,6 @@ async def translate_text(text, lang_code="fr"):
     Returns:
         str: The translated text.
     """
-    translated = await translator.translate(text, target_language=lang_code)
-    return translated.text
+    async with Translator() as translator:
+        translated = await translator.translate(text, target_language=lang_code)
+        return translated.text
