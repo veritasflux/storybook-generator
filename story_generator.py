@@ -1,9 +1,10 @@
+!pip3 install groq
 import re
 from googletrans import Translator
-from groq import AsyncGroq
+from groq import Groq
 
 # Initialize Groq client
-client = AsyncGroq(api_key="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")
+client = Groq(api_key="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")
 
 def generate_story(name, animal, adventure):
     """
