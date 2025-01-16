@@ -51,15 +51,14 @@ def generate_story(name, animal, adventure):
     
 def parse_story(story):
     """
-    Parse the story into titled sections.
+    Parse the story into titled sections, excluding the Illustration proposals.
     Args:
-        story (str): Raw story text with titles and content.
+        story (str): Raw story text with titles, content, and illustration proposals.
     Returns:
         list: A list of tuples, each containing a title and its corresponding content.
     """
     paragraphs = []
     title, content = "", ""  # Initialize title and content as empty strings
-
 
     for line in story.split("\n"):
         line = line.strip()  # Remove leading/trailing whitespace
@@ -74,6 +73,9 @@ def parse_story(story):
             if content:
                 content += " "  # Add a space before appending new content
             content += line[len("Content:"):].strip()
+        elif line.startswith("Illustration:"):
+            # Skip the illustration lines
+            continue
         elif title:  # Additional content lines after "Content:"
             content += " " + line.strip()
 
@@ -82,6 +84,7 @@ def parse_story(story):
         paragraphs.append((title, content.strip()))
 
     return paragraphs
+
 
 def extract_traits(story_output):
     traits_start = story_output.find("Traits:")
