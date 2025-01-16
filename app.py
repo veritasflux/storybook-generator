@@ -4,8 +4,9 @@ from image_generator import generate_image
 import os
 import time
 
-
+# Headers for the API authorization
 headers = {"Authorization": "Bearer " + os.getenv("HUGGING_API_TOKEN")}
+
 # Title
 st.title("Personalized Storybook Generator")
 
@@ -25,19 +26,30 @@ if submit_button:
         else:
             # Parse the story into titled paragraphs
             paragraphs = parse_story(story)
-            traits = extract_traits(story)
-            image = parse_illustration(story)
-            st.write("### Your Story")
-            for title, paragraph in paragraphs:
-                st.write(f"#### {title}")
-                st.write(paragraph)
+            traits = extract_traits(story)  # Extract traits from the story
+            illustrations = parse_illustration(story)  # Extract illustration prompts
 
-                # Generate an image for this paragraph
-                prompt = (f"Illustration for {image}, {traits}. Depict this in a colorful and vibrant children's storybook style.")
-                with st.spinner(f"Generating an illustration for: {title}"):
-                    try:
-                        time.sleep(4)
-                        image_path = generate_image(prompt, headers)
-                        st.image(image_path, caption=title)
-                    except Exception as e:
-                        st.error(f"Error generating illustration for {title}: {e}")
+            st.write("### Your Story")
+            
+            # Ensure there are illustrations for each paragraph
+            if len(illustrations) != len(paragraphs):
+                st.error("Mismatch between story paragraphs and illustrations.")
+            else:
+                for i, (title, paragraph) in enumerate(paragraphs):
+                    st.write(f"#### {title}")
+                    st.write(paragraph)
+
+                    # Generate an image for this paragraph
+                    illustration_description = illustrations[i]
+                    prompt = (
+                        f"{illustration_description}, {traits}. "
+                        f"Depict this in a colorful and vibrant children's storybook style."
+                    )
+
+                    with st.spinner(f"Generating an illustration for: {title}"):
+                        try:
+                            time.sleep(4)  # Adjust delay as needed to avoid API rate limits
+                            image_path = generate_image(prompt, headers)
+                            st.image(image_path, caption=title)
+                        except Exception as e:
+                            st.error(f"Error generating illustration for {title}: {e}")
