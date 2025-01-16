@@ -23,9 +23,9 @@ def generate_story(name, animal, adventure):
     "Traits: The animal is a small, golden dog. The child is a boy with short black hair, wearing a blue shirt and red shorts.\n"
     f"For each paragraph, provide a title and an illustration proposal formatted as follows (Do not add special characters before Title or Content or Illustration):\n\n"
     f"Example Expected output format:"
-    "Title: A New Adventure\n"
-    "Content: The Adventure between Whiskers and Lilia begins.\n"
-     "Illustration: a {animal} and a child together in a landscape.\n"
+    "Title: Setting Sail\n"
+    "Content: Ahmed had always dreamed of going on a sea adventure with his favorite animal, a shark named Finley. One sunny day, he finally got his chance. Ahmed and Finley set sail on a small boat, excited to explore the open waters. The wind was in their hair, and the sun was shining bright as they sailed further and further away from the shore.\n"
+     "Illustration: a {animal} sailing alongside a child who is inside a boat.\n"
 )
 
     # Call Groq's chat completion
