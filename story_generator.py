@@ -25,7 +25,7 @@ def generate_story(name, animal, adventure):
     f"Example Expected output format:"
     "Title: A New Adventure\n"
     "Content: The Adventure between Whiskers and Lilia begins.\n"
-    "Illustration: a {animal} and a child together in a landscape)
+    "Illustration: a {animal} and a child together in a landscape\n")
 
     # Call Groq's chat completion
     completion = client.chat.completions.create(
