@@ -25,6 +25,7 @@ async def translate_paragraphs(paragraphs, lang_code):
     translated_paragraphs = []
     for title, paragraph in paragraphs:
         translated_title = await translate_text(title, lang_code)
+        st.write(translated_title)
         translated_paragraph = await translate_text(paragraph, lang_code)
         translated_paragraphs.append((translated_title, translated_paragraph))
     return translated_paragraphs
@@ -50,7 +51,7 @@ if submit_button:
                 if target_language != "None":
                     lang_code = {"French": "fr", "Spanish": "es", "Arabic": "ar"}[target_language]
                     translated_paragraphs = asyncio.run(translate_paragraphs(paragraphs, lang_code))
-                    st.write(translated_paragraphs)
+                    st.write(lang_code)
                 else:
                     translated_paragraphs = paragraphs
 
