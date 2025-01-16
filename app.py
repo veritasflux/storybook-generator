@@ -3,6 +3,8 @@ from story_generator import generate_story, parse_story, extract_traits, parse_i
 from image_generator import generate_image
 import os
 import time
+from groq import Groq
+
 
 # Headers for the API authorization
 headers = {"Authorization": "Bearer " + os.getenv("HUGGING_API_TOKEN")}
