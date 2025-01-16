@@ -1,4 +1,3 @@
-pip install groq
 import re
 from googletrans import Translator
 from groq import Groq
