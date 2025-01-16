@@ -93,7 +93,7 @@ def extract_traits(story_output):
 
 def parse_illustration(story_output):
     image_start = story_output.find("Illustration:")
-    image_end = story_output.find("Illustration:", image_start)
+    image_end = story_output.find("Content:", image_start)
     if image_start != -1 and image_end != -1:
         image_text = story_output[image_start + len("Illustration:"):image_end].strip()
         return image_text
