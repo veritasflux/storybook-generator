@@ -29,7 +29,7 @@ def generate_story(name, animal, adventure):
      f"Second Example Expected output format:"
     "Title: The Mysterious Island\n"
     "Content: As they sailed further and further away from the shore, Ahmed and Bruce stumbled upon a mysterious island. The island was surrounded by rocky cliffs and dense jungle, and Ahmed was eager to explore it. But as they approached the shore, they realized that the only way to reach the island was by solving a tricky puzzle. A sign on the cliff read: 'What can be broken, but never held?'\n"
-     "Illustration: a {animal} with a child on the shore reading a sign with no readable letters.\n"
+     "Illustration: a {animal} with a child on the shore reading a sign with multiple rows.\n"
 )
 
     # Call Groq's chat completion
