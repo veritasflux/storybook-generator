@@ -1,5 +1,5 @@
 from groq import Groq
-
+import re
 # Initialize Groq client
 client = Groq(api_key="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")
 
@@ -91,11 +91,16 @@ def extract_traits(story_output):
         return traits_text
     return ""
 
-def parse_illustration(story_output):
-    image_start = story_output.find("Illustration:")
-    image_end = story_output.find("Title:", image_start)
-    if image_start != -1 and image_end != -1:
-        image_text = story_output[image_start + len("Illustration:"):image_end].strip()
-        return image_text
-    return ""
-
+def parse_illustration(story: str):
+    """
+    Parse the illustration proposals from the generated story.
+    
+    Args:
+        story (str): The full text output of the story with titles, content, and illustration proposals.
+    
+    Returns:
+        List[str]: A list of illustration descriptions for each paragraph.
+    """
+    illustration_pattern = r"Illustration:\s*(.+)"
+    illustrations = re.findall(illustration_pattern, story)
+    return illustrations
