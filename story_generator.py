@@ -21,10 +21,11 @@ def generate_story(name, animal, adventure):
     f"generate traits of the {animal} like color, size and the child, boy or a girl, hair color, cloth colors"
     f"Traits text should be positioned at the beginning of the story.Example of Expected output format for the traits "
     "Traits: The animal is a small, golden dog. The child is a boy with short black hair, wearing a blue shirt and red shorts.\n"
-    f"For each paragraph, provide a title formatted as follows (Do not add special characters before Title or Content):\n\n"
+    f"For each paragraph, provide a title and an illustration proposal formatted as follows (Do not add special characters before Title or Content or Illustration):\n\n"
     f"Example Expected output format:"
     "Title: A New Adventure\n"
-    "Content: The Adventure between Whiskers and Lilia begins.\n")
+    "Content: The Adventure between Whiskers and Lilia begins.\n"
+    "Illustration: a {animal} and a child together in a landscape)
 
     # Call Groq's chat completion
     completion = client.chat.completions.create(
@@ -87,5 +88,13 @@ def extract_traits(story_output):
     if traits_start != -1 and traits_end != -1:
         traits_text = story_output[traits_start + len("Traits:"):traits_end].strip()
         return traits_text
+    return ""
+
+def parse_illustration(story_output):
+    image_start = story_output.find("Illustration:")
+    image_end = story_output.find("Illustration:", image_start)
+    if image_start != -1 and image_end != -1:
+        image_text = story_output[image_start + len("Illustration:"):image_end].strip()
+        return image_text
     return ""
 
