@@ -63,7 +63,7 @@ if submit_button:
                     # Generate and display an image
                     illustration_description = illustrations[i]
                     prompt = (
-                        f"{animal} and child {name} are the main characters, {traits}. {illustration_description}. "
+                        f"{favorite_animal} and child {child_name} are the main characters, {traits}. {illustration_description}. "
                         f"Depict this in a colorful and vibrant children's storybook style."
                     )
 
