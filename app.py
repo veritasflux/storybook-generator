@@ -62,8 +62,8 @@ if submit_button:
                     # Generate and display an image
                     illustration_description = illustrations[i]
                     prompt = (
-                        f"{illustration_description}. "
                         f"Depict this in a colorful and vibrant children's storybook style."
+                        f"{illustration_description}. "
                     )
 
                     with st.spinner(f"Generating an illustration for: {title}"):
