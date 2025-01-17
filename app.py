@@ -62,7 +62,6 @@ if submit_button:
                     # Generate and display an image
                     illustration_description = illustrations[i]
                     prompt = (
-                       # f"Depict this in a colorful and vibrant children's storybook style."
                         f"{illustration_description} .comic art, vibrant, highly detailed. "
                     )
 
