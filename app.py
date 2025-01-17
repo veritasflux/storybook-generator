@@ -40,7 +40,7 @@ if submit_button:
             paragraphs = parse_story(story)  # Titles and content (without illustrations)
             traits = extract_traits(story)
             illustrations = parse_illustration(story)
-            
+            st.write(illustrations)
             st.write("### Your Story")
             
             if len(illustrations) != len(paragraphs):
