@@ -28,7 +28,7 @@ f"4- Positive Theme: Ensure the story conveys positive messages such as friendsh
     f"Traits text should be positioned at the beginning of the story.Example of Expected output format for the traits "
     "Traits: The animal is a small, golden dog. The child is a boy with short black hair, wearing a blue shirt and red shorts.\n"
     f"For each paragraph, provide a title and an illustration proposal formatted as follows (Do not add special characters before Title or Content or Illustration).\n\n"
-    f"For the illustration always mention that the child and {animal} should be realistic, then describe the environement."
+    f"For the illustration do not mention any style of image, just keywords of the characters and then describe the environement."
     f"Example Expected output format:"
     "Title: Setting Sail\n"
     "Content: Ahmed had always dreamed of going on a sea adventure with his favorite animal, a shark named Finley. One sunny day, he finally got his chance. Ahmed and Finley set sail on a small boat, excited to explore the open waters. The wind was in their hair, and the sun was shining bright as they sailed further and further away from the shore.\n"
