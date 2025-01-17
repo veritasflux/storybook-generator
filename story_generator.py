@@ -32,11 +32,10 @@ f"4- Positive Theme: Ensure the story conveys positive messages such as friendsh
     f"Example Expected output format:"
     "Title: Setting Sail\n"
     "Content: Ahmed had always dreamed of going on a sea adventure with his favorite animal, a shark named Finley. One sunny day, he finally got his chance. Ahmed and Finley set sail on a small boat, excited to explore the open waters. The wind was in their hair, and the sun was shining bright as they sailed further and further away from the shore.\n"
-    "Illustration: A cartoon style boy with curly brown hair, wearing a yellow shirt and green shorts, sitting next to a turquoise Raptor on a beach. They are surrounded by a detailed Lego castle and a treasure chest filled with colorful Lego bricks. The setting features a serene sandy beach and a beautiful starry night sky in the background.\n"
+    "Illustration: comic boy with short black hair, wearing a bright yellow shirt and blue shorts, sitting next to a small, turquoise comic Raptor on a boat, calm sea, beautiful sunny sky, fluffy white clouds. Island in the background, towers rising out of the sea. graphic illustration, comic art, graphic novel art, vibrant, highly detailed.\n"
      f"Second Example Expected output format:"
     "Title: The Mysterious Island\n"
     "Content: As they sailed further and further away from the shore, Ahmed and Bruce stumbled upon a mysterious island. The island was surrounded by rocky cliffs and dense jungle, and Ahmed was eager to explore it. But as they approached the shore, they realized that the only way to reach the island was by solving a tricky puzzle. A sign on the cliff read: 'What can be broken, but never held?'\n"
-     "Illustration: A cartoon style boy with curly brown hair, wearing a yellow shirt and green shorts, sitting next to a turquoise Raptor on a beach. They are surrounded by a detailed Lego castle and a treasure chest filled with colorful Lego bricks. The setting features a serene sandy beach and a beautiful starry night sky in the background.\n"
 )
 
     # Call Groq's chat completion
