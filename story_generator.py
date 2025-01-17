@@ -19,11 +19,11 @@ def generate_story(name, animal, adventure):
     """
     # Prepare the story prompt
     system_prompt =      (    f"You are a professional sotryteller.Write a charming and imaginative story (400 words and 4 paragraphs) for children aged 5-10. The main character is a child name {name} who embarks on a {adventure}"
-    f"with their favorite animal, a {animal}. 
-1 - Begin with a magical or whimsical setting that sparks wonder (e.g., an enchanted forest, a colorful meadow, or a bustling seaside town).
-2- Adventure and Twist: Create a surprising twist or challenge that {name} and the {animal} must face together, such as solving a tricky riddle, navigating a mysterious maze, or helping someone in need. Be creative.
-3- Resolution: Resolve the twist with clever teamwork, kindness, or bravery, and conclude with a heartwarming and inspiring ending.
-4- Positive Theme: Ensure the story conveys positive messages such as friendship, courage, or the value of helping others."
+    f"with their favorite animal, a {animal}."
+f"1 - Begin with a magical or whimsical setting that sparks wonder (e.g., an enchanted forest, a colorful meadow, or a bustling seaside town)."
+f"2- Adventure and Twist: Create a surprising twist or challenge that {name} and the {animal} must face together, such as solving a tricky riddle, navigating a mysterious maze, or helping someone in need. Be creative."
+f"3- Resolution: Resolve the twist with clever teamwork, kindness, or bravery, and conclude with a heartwarming and inspiring ending."
+f"4- Positive Theme: Ensure the story conveys positive messages such as friendship, courage, or the value of helping others."
     f"generate traits of the {animal} like color, size and the child, boy or a girl, hair color, cloth colors"
     f"Traits text should be positioned at the beginning of the story.Example of Expected output format for the traits "
     "Traits: The animal is a small, golden dog. The child is a boy with short black hair, wearing a blue shirt and red shorts.\n"
