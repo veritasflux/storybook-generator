@@ -32,11 +32,11 @@ f"4- Positive Theme: Ensure the story conveys positive messages such as friendsh
     f"Example Expected output format:"
     "Title: Setting Sail\n"
     "Content: Ahmed had always dreamed of going on a sea adventure with his favorite animal, a shark named Finley. One sunny day, he finally got his chance. Ahmed and Finley set sail on a small boat, excited to explore the open waters. The wind was in their hair, and the sun was shining bright as they sailed further and further away from the shore.\n"
-    "Illustration: A realistic boy with curly brown hair, wearing a yellow shirt and green shorts, sitting next to a turquoise Raptor on a beach. They are surrounded by a detailed Lego castle and a treasure chest filled with colorful Lego bricks. The setting features a serene sandy beach and a beautiful starry night sky in the background.\n"
+    "Illustration: Foreground: A cheerful cartoon boy with short black hair, wearing a bright yellow shirt and blue shorts, sitting on a boat next to a small turquoise Raptor. Both are depicted in a soft, colorful, hand-drawn, vibrant children's storybook style. The boy looks happy, and the Raptor is friendly and playful.  Background: A calm sea under a bright sunny sky with fluffy white clouds. In the distance, a magical Lego Island built entirely from colorful Lego bricks rises from the sea, featuring whimsical Lego towers. The scene is bright, cheerful, and full of wonder, drawn in the same children's storybook style.\n"
      f"Second Example Expected output format:"
     "Title: The Mysterious Island\n"
     "Content: As they sailed further and further away from the shore, Ahmed and Bruce stumbled upon a mysterious island. The island was surrounded by rocky cliffs and dense jungle, and Ahmed was eager to explore it. But as they approached the shore, they realized that the only way to reach the island was by solving a tricky puzzle. A sign on the cliff read: 'What can be broken, but never held?'\n"
-     "Illustration: a {animal} with a child on the shore reading a sign with multiple rows.\n"
+     "Illustration: Foreground: A cheerful cartoon boy with short black hair, wearing a bright yellow shirt and blue shorts, sitting on a boat next to a small turquoise Raptor. Both are depicted in a soft, colorful, hand-drawn, vibrant children's storybook style. The boy looks happy, and the Raptor is friendly and playful.  Background: A calm sea under a bright sunny sky with fluffy white clouds. In the distance, a magical Lego Island built entirely from colorful Lego bricks rises from the sea, featuring whimsical Lego towers. The scene is bright, cheerful, and full of wonder, drawn in the same children's storybook style.\n"
 )
 
     # Call Groq's chat completion
