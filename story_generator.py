@@ -18,7 +18,7 @@ def generate_story(name, animal, adventure):
         str: The generated story.
     """
     # Prepare the story prompt
-    system_prompt =      (    f"You are a professional sotryteller.Write a charming and imaginative story (400 words and 4 paragraphs) for children aged 5-10. The main character is a child name {name} who embarks on a {adventure}"
+    system_prompt =      (    f"You are a professional sotryteller.Write a charming and imaginative story (400 words and 5 paragraphs) for children aged 5-10. The main character is a child name {name} who embarks on a {adventure}"
     f"with their favorite animal, a {animal}."
 f"1 - Begin with a magical or whimsical setting that sparks wonder (e.g., an enchanted forest, a colorful meadow, or a bustling seaside town)."
 f"2- Adventure and Twist: Create a surprising twist or challenge that {name} and the {animal} must face together, such as solving a tricky riddle, navigating a mysterious maze, or helping someone in need. Use gentle suspense in the twist to keep young readers captivated. Add sensory details (e.g., sights, sounds, and smells) to make the story more vivid. Incorporate playful dialogue between {name} and the {animal} to add humor or emotional depth."
