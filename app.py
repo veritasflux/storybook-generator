@@ -62,7 +62,7 @@ if submit_button:
                     # Generate and display an image
                     illustration_description = illustrations[i]
                     prompt = (
-                        f"{illustration_description} .anime art, vibrant, highly detailed. "
+                        f"{illustration_description} .anime, By Hayao Miyazaki, vibrant, highly detailed. "
                     )
 
                     with st.spinner(f"Generating an illustration for: {title}"):
