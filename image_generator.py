@@ -21,7 +21,7 @@ def generate_image(prompt, headers, output_path="generated_image.png", max_retri
     api_url = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large"
 
     # Payload for the API request
-    payload = {"inputs": prompt}
+    payload = {"inputs": prompt, negative_prompt = 'realistic'}
 
     # Retry mechanism
     retries = 0
