@@ -21,7 +21,7 @@ def generate_image(prompt, headers, output_path="generated_image.png", max_retri
     api_url = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large"
 
     #API aparams
-     params = {
+    params = {
     "guidance_scale": 7.5,
     "negative_prompt": ["realistic, comic"],
     "num_inference_steps": 40,
