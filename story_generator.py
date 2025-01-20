@@ -32,7 +32,7 @@ f"4- Positive Theme: Ensure the story conveys positive messages such as friendsh
     f"Slow down key moments in the story to give readers time to enjoy and reflect on the adventure. For instance, after solving the twist, show the child and animal celebrating or talking about what they’ve learned."
     f"Add playful or emotional dialogue between the child and the animal to enhance their bond."
     f"For each paragraph, provide a title and an illustration proposal formatted as follows (Do not add special characters before Title or Content or Illustration).\n\n"
-    f"For the illustration do not mention any style of image, just keywords of the characters and then describe the environement."
+    f"For the illustration do not mention any style of image, just keywords of the characters, traits of the {animal} like color, size and the child, boy or a girl, hair color, cloth colors, accessories and then describe the environement."
     f"Example Expected output format:"
     "Title: Setting Sail\n"
     "Content: Ahmed had always dreamed of going on a sea adventure with his favorite animal, a shark named Finley. One sunny day, he finally got his chance. Ahmed and Finley set sail on a small boat, excited to explore the open waters. The wind was in their hair, and the sun was shining bright as they sailed further and further away from the shore.\n"
