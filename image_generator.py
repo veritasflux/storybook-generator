@@ -18,7 +18,7 @@ def generate_image(prompt, headers, output_path="generated_image.png", max_retri
         str: Path to the saved image or an error message if the generation fails.
     """
     # API endpoint
-    api_url = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large"
+    api_url = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large-turbo""
 
     # Payload for the API request
     payload = {"inputs": prompt}
