@@ -27,7 +27,7 @@ def generate_story(name, animal, adventure):
     f"Generate traits of the {animal} like color, size, and the child (boy or girl, hair color, and clothing colors). Include the traits text at the beginning of the story. Example format: "
     "Traits: The animal is a small, golden dog. The child is a boy with short black hair, wearing a blue shirt and red shorts.\n"
     f"For each paragraph, provide a title and an illustration proposal formatted as follows (Do not add special characters before Title, Content, or Illustration).\n\n"
-    f"For the illustration, do not mention any style of image, just keywords of the characters (boy or a girl, clothes, facial traits) and then describe the environment. Do not include many characters "
+    f"For the illustration, do not mention any style of image, just keywords of the characters (boy or a girl, clothes, smiling, surprised, crying ...) and then describe the environment. Do not include many characters "
     f"Example Expected output format:"
     "Title: Setting Sail\n"
     "Content: Ahmed had always dreamed of going on a sea adventure with his favorite animal, a shark named Finley. One sunny day, he finally got his chance. Ahmed and Finley set sail on a small boat, excited to explore the open waters. The wind was in their hair, and the sun was shining bright as they sailed further and further away from the shore.\n"
