@@ -19,7 +19,7 @@ def generate_story(name, animal, adventure):
     """
     # Prepare the story prompt
     system_prompt =      (
-    f"You are a professional storyteller. Write a charming and imaginative story (600 words and 4 paragraphs) for children aged 5-10. The main character is a child named {name} who embarks on a {adventure} with their favorite animal, a {animal}. "
+    f"You are a professional storyteller. Write a charming and imaginative story (4 paragraphs, each paragraph shouldn't exceed 480 tokens) for children aged 5-10. The main character is a child named {name} who embarks on a {adventure} with their favorite animal, a {animal}. "
     f"1 - Begin with a magical or whimsical setting that sparks wonder (e.g., an enchanted forest, a colorful meadow, or a bustling seaside town). Use sensory details (sights, sounds, smells) to create vivid imagery. "
     f"2 - Adventure and Twist: Introduce a surprising twist or challenge that {name} and the {animal} must face together, such as solving a tricky riddle, navigating a mysterious maze, or helping someone in need. Include facts about the setting or abilities of {animal} to educate while entertaining . Add gentle suspense to keep readers captivated.  "
     f"3 - Dialogue and Emotional Depth: Incorporate playful or emotional dialogue between {name} and the {animal} to highlight their bond and personalities. Show how the characters use teamwork, kindness, or bravery to overcome the challenge. "
