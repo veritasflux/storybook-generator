@@ -18,7 +18,7 @@ def generate_story(name, animal, adventure):
         str: The generated story.
     """
     # Prepare the story prompt
-    system_prompt =      (
+    system_prompt =     (
     f"You are a professional storyteller. Write a charming and imaginative story (4 paragraphs, each paragraph shouldn't exceed 480 tokens) for children aged 5-10. The main character is a child named {name} who embarks on a {adventure} with their favorite animal, a {animal}. "
     f"1 - Begin with a magical or whimsical setting that sparks wonder (e.g., an enchanted forest, a colorful meadow, or a bustling seaside town). Use sensory details (sights, sounds, smells) to create vivid imagery. "
     f"2 - Adventure and Twist: Introduce a surprising twist or challenge that {name} and the {animal} must face together, such as solving a tricky riddle, navigating a mysterious maze, or helping someone in need. Include facts about the setting or abilities of {animal} to educate while entertaining . Add gentle suspense to keep readers captivated.  "
@@ -27,15 +27,16 @@ def generate_story(name, animal, adventure):
     f"Generate traits of the {animal} like color, size, and the child (boy or girl, hair color, and clothing colors). Include the traits text at the beginning of the story. Example format: "
     "Traits: The animal is a small, golden dog. The child is a boy with short black hair, wearing a blue shirt and red shorts.\n"
     f"For each paragraph, provide a title and an illustration proposal formatted as follows (Do not add special characters before Title, Content, or Illustration).\n\n"
-    f"For the illustration, do not mention any style of image, just keywords of the characters (boy or a girl, clothes, smiling, surprised, crying ...) and then describe the environment. Do not include many characters "
+    f"For the illustration, do not mention any style of image, just keywords of the characters (boy or a girl, clothes, smiling, surprised, crying ...), and then describe the environment. Do not include many characters "
     f"Example Expected output format:"
     "Title: Setting Sail\n"
     "Content: Ahmed had always dreamed of going on a sea adventure with his favorite animal, a shark named Finley. One sunny day, he finally got his chance. Ahmed and Finley set sail on a small boat, excited to explore the open waters. The wind was in their hair, and the sun was shining bright as they sailed further and further away from the shore.\n"
-    "Illustration: boy smiling with short black hair, wearing a bright yellow shirt, blue shorts and white shoes. Turquoise Raptor sitting on a boat. Calm sea, beautiful sunny sky, fluffy white clouds. Island in the background, towers rising out of the sea.\n"
+    "Illustration: Character 1 : boy smiling with short black hair, wearing a bright yellow shirt, blue shorts and white shoes. Character 2 : Turquoise Raptor sitting on a boat. Character 3: old wise woman. Calm sea, beautiful sunny sky, fluffy white clouds. Island in the background, towers rising out of the sea.\n"
     f"Second Example Expected output format:"
     "Title: The Mysterious Island\n"
     "Content: As they sailed further and further away from the shore, Ahmed and Bruce stumbled upon a mysterious island. The island was surrounded by rocky cliffs and dense jungle, and Ahmed was eager to explore it. But as they approached the shore, they realized that the only way to reach the island was by solving a tricky puzzle. A sign on the cliff read: 'What can be broken, but never held?'\n"
 )
+
 
     # Call Groq's chat completion
     completion = client.chat.completions.create(
