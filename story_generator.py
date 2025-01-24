@@ -31,11 +31,12 @@ def generate_story(name, animal, adventure):
     f"Example Expected output format:"
     "Title: Setting Sail\n"
     "Content: Ahmed had always dreamed of going on a sea adventure with his favorite animal, a shark named Finley. One sunny day, he finally got his chance. Ahmed and Finley set sail on a small boat, excited to explore the open waters. The wind was in their hair, and the sun was shining bright as they sailed further and further away from the shore.\n"
-    "Illustration: Human 1: boy smiling with short black hair, wearing a bright yellow shirt, blue shorts and white shoes. Animal 1 : Turquoise Raptor sitting on a boat. Animal 2: old wise woman. Calm sea, beautiful sunny sky, fluffy white clouds. Island in the background, towers rising out of the sea.\n"
+    "Illustration: Human boy smiling with short black hair, wearing a bright yellow shirt, blue shorts and white shoes AND Animal Turquoise Raptor sitting on a boat AND small white Owl perched on a headstone. Calm sea, beautiful sunny sky, fluffy white clouds. Island in the background, towers rising out of the sea.\n"
     f"Second Example Expected output format:"
     "Title: The Mysterious Island\n"
     "Content: As they sailed further and further away from the shore, Ahmed and Bruce stumbled upon a mysterious island. The island was surrounded by rocky cliffs and dense jungle, and Ahmed was eager to explore it. But as they approached the shore, they realized that the only way to reach the island was by solving a tricky puzzle. A sign on the cliff read: 'What can be broken, but never held?'\n"
 )
+
 
 
 
