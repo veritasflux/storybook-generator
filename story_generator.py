@@ -3,7 +3,7 @@ from googletrans import Translator
 from groq import Groq
 
 # Initialize Groq client
-client = Groq(api_key=os.getenv("GROQ_API_TOKEN))
+client = Groq(api_key=os.getenv(GROQ_API_TOKEN))
 
 def generate_story(name, animal, adventure):
     """
