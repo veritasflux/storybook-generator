@@ -17,7 +17,7 @@ with st.form("storybook_form"):
     child_name = st.text_input("Child's Name")
     favorite_animal = st.text_input("Favorite Animal")
     adventure_type = st.text_input("Choose Adventure")
-    target_language = st.selectbox("Translate Story To", ["None", "French", "Spanish", "Arabic"])
+    #target_language = st.selectbox("Translate Story To", ["None", "French", "Spanish", "Arabic"])
     submit_button = st.form_submit_button("Generate Story")
 
 # Function to handle the translation
@@ -40,7 +40,7 @@ if submit_button:
             paragraphs = parse_story(story)  # Titles and content (without illustrations)
             traits = extract_traits(story)
             illustrations = parse_illustration(story)
-            st.write(illustrations)
+            #st.write(illustrations)
             st.write("### Your Story")
             
             if len(illustrations) != len(paragraphs):
