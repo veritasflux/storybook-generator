@@ -1,6 +1,7 @@
 import re
 from googletrans import Translator
 from groq import Groq
+import os
 
 # Initialize Groq client
 client = Groq(api_key=os.getenv(GROQ_API_TOKEN))
