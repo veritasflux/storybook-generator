@@ -50,7 +50,6 @@ if submit_button:
                 if target_language != "None":
                     lang_code = {"French": "fr", "Spanish": "es", "Arabic": "ar"}[target_language]
                     translated_paragraphs = asyncio.run(translate_paragraphs(paragraphs, lang_code))
-                    st.write(lang_code)
                 else:
                     translated_paragraphs = paragraphs
 
