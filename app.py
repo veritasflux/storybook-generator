@@ -16,7 +16,7 @@ st.title("Personalized Storybook Generator")
 with st.form("storybook_form"):
     child_name = st.text_input("Child's Name")
     favorite_animal = st.text_input("Favorite Animal")
-    adventure_type = st.text_input("Choose Adventure")
+    adventure_type = st.text_input("Choose Adventure", value="Savannah Exploration")
     target_language = st.selectbox("Translate Story To", ["None", "French", "Spanish"])
     submit_button = st.form_submit_button("Generate Story")
 
