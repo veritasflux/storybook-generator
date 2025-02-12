@@ -57,6 +57,7 @@ if submit_button:
                 for i, (title, paragraph) in enumerate(translated_paragraphs):
                     # Display title and content
                     st.write(f"#### {title}")
+                    st.audio(generate_story_speech(paragraph))
                     st.write(paragraph)
 
                     # Generate and display an image
