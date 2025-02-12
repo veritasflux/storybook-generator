@@ -6,3 +6,5 @@ accelerate
 diffusers
 transformers
 googletrans
+kokoro>=0.3.4
+soundfile
