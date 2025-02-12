@@ -1,7 +1,7 @@
 import streamlit as st
 from story_generator import generate_story, parse_story, extract_traits, parse_illustration, translate_text
 from image_generator import generate_image
-from tts_generator import generate_story_speech
+#from tts_generator import generate_story_speech
 import os
 import time
 import asyncio
@@ -57,7 +57,7 @@ if submit_button:
                 for i, (title, paragraph) in enumerate(translated_paragraphs):
                     # Display title and content
                     st.write(f"#### {title}")
-                    st.audio(generate_story_speech(paragraph))
+                    #st.audio(generate_story_speech(paragraph))
                     st.write(paragraph)
 
                     # Generate and display an image
