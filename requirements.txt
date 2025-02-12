@@ -9,3 +9,4 @@ googletrans
 kokoro>=0.3.4
 soundfile
 IPython
+en-core-web-sm
