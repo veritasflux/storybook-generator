@@ -1,8 +1,8 @@
 
 # 1️⃣ Install kokoro
-!pip install -q kokoro>=0.3.4 soundfile
+pip install -q kokoro>=0.3.4 soundfile
 # 2️⃣ Install espeak, used for English OOD fallback and some non-English languages
-!apt-get -qq -y install espeak-ng > /dev/null 2>&1
+apt-get -qq -y install espeak-ng > /dev/null 2>&1
 # 🇪🇸 'e' => Spanish es
 # 🇫🇷 'f' => French fr-fr
 # 🇮🇳 'h' => Hindi hi
