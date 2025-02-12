@@ -12,7 +12,7 @@ import numpy as np
 # 🇺🇸 'a' => American English, 🇬🇧 'b' => British English
 # 🇯🇵 'j' => Japanese: pip install misaki[ja]
 # 🇨🇳 'z' => Mandarin Chinese: pip install misaki[zh]
-def generate_story_speech(text)
+def generate_story_speech(text):
     pipeline = KPipeline(lang_code='a') # <= make sure lang_code matches voice
     
     # This text is for demonstration purposes only, unseen during training
